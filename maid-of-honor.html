@@ -48,8 +48,7 @@ body {
   border-radius: 12px;
 }
 
-/* Flip when .is-flipped class is present */
-.card:hover .card-inner {
+.card-inner.is-flipped {
   transform: rotateY(180deg);
 }
 
@@ -98,5 +97,13 @@ body {
 
 <p class="note">(click or tap the card to flip)</p>
 
+<script>
+  const card = document.getElementById('card');
+  const cardInner = card.querySelector('.card-inner');
+  card.addEventListener('click', () => {
+    cardInner.classList.toggle('is-flipped');
+  });
+</script>  
+  
 </body>
 </html>
